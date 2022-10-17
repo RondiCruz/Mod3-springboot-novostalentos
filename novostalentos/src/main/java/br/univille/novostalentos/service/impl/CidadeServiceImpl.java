@@ -23,6 +23,15 @@ public class CidadeServiceImpl implements CidadeService {
         return repositorio.save(cidade);
     }
 
+    @Override
+    public Cidade findById(long id) {
+        var resultado = repositorio.findById(id);
+        if(resultado.isPresent()){
+            return resultado.get();
+        }
+        return new Cidade();
+    }
+
   
     
 }

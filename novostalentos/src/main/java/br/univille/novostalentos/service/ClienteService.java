@@ -7,5 +7,6 @@ public interface ClienteService {
     List<Cliente> getAll();
     Cliente save(Cliente cliente);
     Cliente findById(long id);
+    void delete(long id);
 
 }
