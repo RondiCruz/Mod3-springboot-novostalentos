@@ -1,19 +1,15 @@
 package br.univille.novostalentos.entity;
-
-import static javax.persistence.GenerationType.IDENTITY;
-
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -35,10 +31,19 @@ public class Cliente {
     @Temporal(value = TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dataNascimento;
+   
+    @ManyToOne
+    private Cidade cidadeResidencia;
     
    
     public Date getDataNascimento() {
         return dataNascimento;
+    }
+    public Cidade getCidadeResidencia() {
+        return cidadeResidencia;
+    }
+    public void setCidadeResidencia(Cidade cidadeResidencia) {
+        this.cidadeResidencia = cidadeResidencia;
     }
     public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
