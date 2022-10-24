@@ -1,5 +1,7 @@
 package br.univille.novostalentos.entity;
 import java.util.Date;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,7 +34,7 @@ public class Cliente {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dataNascimento;
    
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private Cidade cidadeResidencia;
     
    
