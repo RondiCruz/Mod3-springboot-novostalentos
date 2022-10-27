@@ -1,0 +1,11 @@
+### Retorna todos os objetos cliente
+get http://localhost:8080/api/v1/clientes
+
+### Retorna um único objeto cliente pelo ID
+GET http://localhost:8080/api/v1/clientes/999
+
+### Busca pelo nome do cliente
+GET http://localhost:8080/api/v1/clientes/nome/ze
+
+### Busca pelo nome do cliente
+GET http://localhost:8080/api/v1/clientes/?nome=nho
