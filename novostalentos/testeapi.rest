@@ -9,3 +9,40 @@ GET http://localhost:8080/api/v1/clientes/nome/ze
 
 ### Busca pelo nome do cliente
 GET http://localhost:8080/api/v1/clientes/?nome=nho
+
+### Enviar novo cliente
+POST http://localhost:8080/api/v1/clientes
+ Content-Type: application/json
+
+ {
+    
+    "nome": "Tio Patinhas",
+    "endereco": "Rua lululul 700",
+    "sexo": "Masculino",
+    "dataNascimento": "2022-10-27",
+    "cidadeResidencia": {
+      "id": 2
+    }
+ }
+
+ ### Alterar novo cliente
+PUT  http://localhost:8080/api/v1/clientes/3
+ Content-Type: application/json
+
+ {
+    "id": 3,
+    "nome": "Luizinho da Silva Sauro",
+    "endereco": "Rua Lilili 300",
+    "sexo": "Masculino",
+    "dataNascimento": "2022-09-25",
+    "cidadeResidencia": {
+      "id": 3,
+      "nome": "São Francisco do Sul"
+    }
+
+ }
+  
+  ### Remover Cliente
+  DELETE http://localhost:8080/api/v1/clientes/3
+
+ 
